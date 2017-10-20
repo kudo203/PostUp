@@ -1,9 +1,16 @@
 
 var app = angular.module('PostUp',[]);
+app.factory('posts',[function () {
+    var set = {
+        posts:[]
+    };
+    return set;
+}])
 app.controller('MainCtrl',[
     '$scope',
-    function($scope){
-        $scope.posts = []
+    'posts',
+    function($scope,posts){
+        $scope.posts = posts.posts;
         $scope.addPost = function () {
             if($scope.title==''){return;}
             $scope.posts.push({
