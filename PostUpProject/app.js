@@ -13,7 +13,7 @@ app.controller('MainCtrl',[
             $scope.title = '';
             $scope.link = '';
         };
-        
+
         $scope.incrementUpvote = function (post) {
             post.upvotes +=1;
         }
